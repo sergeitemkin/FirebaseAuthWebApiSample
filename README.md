@@ -4,7 +4,7 @@ There are two projects rolled into the solution here. One is a SPA client that c
 ##Client (Angular 2 SPA)
 Mostly generated via the angular-cli. The actual firebase authentication sample is in `src/app/app.component.ts`. The sample Api call would normally happen via an Angular Service, but I was lazy so it's kinda bundled into the component. This part is pretty straight forward:
 
-1) Create your Firebase config (you really only need the `authDomai`n setting and your api key for this)
+1) Create your Firebase config (you really only need the `authDomain` setting and your api key for this)
 
     var config = {
       apiKey: "AIzaSyD1JWKae5SRLMbVwWdRz2YXu6z-jMzWNJU",
