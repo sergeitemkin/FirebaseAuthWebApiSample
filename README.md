@@ -10,7 +10,9 @@ Mostly generated via the angular-cli. The actual firebase authentication sample 
       apiKey: "AIzaSyD1JWKae5SRLMbVwWdRz2YXu6z-jMzWNJU",
       authDomain: "testing-6bf89.firebaseapp.com"
     };
+    
 2) If you're allowing 3rd party authentication providers, call `firebase.auth().getRedirectResult()` first to check if this is a returning redirect response from said providers. If there's still no user, then you can redirect to the provider, or display an authentication form, etc.
+
 3) Once you get a user, use the `Dd` property on the object to get the Id Token. This is a token containing various claims for the user, including the user's Firebase uid. Pop the Id Token into http://jwt.io to see the claims if you're curious.
  
 Check out [Firebase docs](https://firebase.google.com/docs/auth/web/password-auth) and related links under Authentication for various ways to authenticate.
@@ -25,7 +27,9 @@ Things to look out for:
 Simple, nearly blank, .Net Core app with one controller to return the user's claims.
 
 1) Setup CORS policy (else Authorize attribute will throw errors)
+
 2) Setup Authenticaton Middleware (else Authorize attribute will throw errors). This middleware will read the Jwt token and stuff the claims into the User claims principal.
+
 3) Add the [Authorize] attribute to your controllers or use a filter
 
 Things to look out for:
