@@ -19,7 +19,7 @@ Check out [Firebase docs](https://firebase.google.com/docs/auth/web/password-aut
 
 Things to look out for:
 - You'll want to use lock down your Api key to only be used by your web app at: https://console.developers.google.com/apis/credentials?project={YOUR_FIREBASE_PROJECTID}. Set up your key to use Http referrers, and enter your apps url.
-- You'll want to store the bearer token you get from firebase.auth() in session storage or a javascript cookie (depending on how secure you wanna be). Else the user will be required to log in everytime they refresh the page. You do get some form of single sign-on when you use 3rd party authentication providers like Google, but if you're using email/password, there's no server component to store the cookie to remember who is logged in.
+- You'll want to store the bearer token you get from `firebase.auth()` in session storage or a javascript cookie (depending on how secure you wanna be). Else the user will be required to log in everytime they refresh the page. You do get some form of single sign-on when you use 3rd party authentication providers like Google, but if you're using email/password, there's no server component to store the cookie to remember who is logged in.
 - You'll want to write an interceptor (I think the angular 2 equivalent is to extend Http service) to display the login form if 401s are returned
 - You'll want to write something that'll append the Authentication header to all your api requests
 
@@ -30,7 +30,7 @@ Simple, nearly blank, .Net Core app with one controller to return the user's cla
 
 2) Setup Authenticaton Middleware (else Authorize attribute will throw errors). This middleware will read the Jwt token and stuff the claims into the User claims principal.
 
-3) Add the [Authorize] attribute to your controllers or use a filter
+3) Add the `[Authorize]` attribute to your controllers or use a filter
 
 Things to look out for:
 - Make sure the middleware is added to the pipeline in the right order. Authentication middleware has to go first or the rest of the middleware won't be able to make use of it and Authorize attributes on routes will fail.
