@@ -1,5 +1,5 @@
 # Sample Angular 2 SPA using Firebase Authentication with a .Net Core WebApi
-There are two projects rolled into the solution here:
+There are two projects rolled into the solution here. One is a SPA client that calls an api endpoint, and the other is a WebApi that serves data via the aforementioned endpoint.
 
 ##Client (Angular 2 SPA)
 Mostly generated via the angular-cli. The actual firebase authentication sample is in src/app/app.component.ts. The sample Api call would normally happen via an Angular Service, but I was lazy so it's kinda bundled into the component. This part is pretty straight forward:
