@@ -4,7 +4,7 @@ There are two projects rolled into the solution here. One is a SPA client that c
 ##Client (Angular 2 SPA)
 Mostly generated via the angular-cli. The actual firebase authentication sample is in `src/app/app.component.ts`. The sample Api call would normally happen via an Angular Service, but I was lazy so it's kinda bundled into the component. This part is pretty straight forward:
 
-1) Create your Firebase config (you really only need the authDomain setting and your api key for this)
+1) Create your Firebase config (you really only need the `authDomai`n setting and your api key for this)
 
     var config = {
       apiKey: "AIzaSyD1JWKae5SRLMbVwWdRz2YXu6z-jMzWNJU",
@@ -33,6 +33,6 @@ Simple, nearly blank, .Net Core app with one controller to return the user's cla
 3) Add the `[Authorize]` attribute to your controllers or use a filter
 
 Things to look out for:
-- Make sure the middleware is added to the pipeline in the right order. Authentication middleware has to go first or the rest of the middleware won't be able to make use of it and Authorize attributes on routes will fail.
+- Make sure the middleware is added to the pipeline in the right order. Authentication middleware has to go first or the rest of the middleware won't be able to make use of it and `Authorize` attributes on routes will fail.
 - Restrict CORS policy to at least the origin of your web app
-- Some of the claim names in the Api User object won't match the claim names in the original Jwt. This is because of the silly claim map in JwtSecurityTokenHandler. In .Net not core you could clear the claims via `JwtSecurityTokenHandler.InboundClaimTypeMap.Clear();` call in `Startup.cs`, however, I didn't have time to figure out how to do that in Core.
+- Some of the claim names in the Api User object won't match the claim names in the original Jwt. This is because of the silly claim map in `JwtSecurityTokenHandler`. In .Net not core you could clear the claims via `JwtSecurityTokenHandler.InboundClaimTypeMap.Clear();` call in `Startup.cs`, however, I didn't have time to figure out how to do that in Core.
