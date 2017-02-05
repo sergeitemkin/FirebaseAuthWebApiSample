@@ -41,7 +41,10 @@ namespace WebApi
             var signingKeys = issuerKeyProvider.GetSigningKeys().Result;
 
             // The projectId can be found in Firebase project settings
-            var firebaseProjectId = "testing-6bf89";
+            var firebaseProjectId = "";
+
+            if (string.IsNullOrEmpty(firebaseProjectId))
+                throw new Exception("Need your project Id from Firebase settings up in here");
 
             // Setup middleware to read the Jwt token from the header, validate it using the params above
             // and set the User principal object with the claims from the Jwt token.

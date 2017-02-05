@@ -24,9 +24,14 @@ export class AppComponent {
     // Once you get there, edit your Api key, and set it to have HTTP referrers. Then 
     // whitelist your web app there.
     var config = {
-      apiKey: "AIzaSyD1JWKae5SRLMbVwWdRz2YXu6z-jMzWNJU",
-      authDomain: "testing-6bf89.firebaseapp.com"
+      apiKey: '',
+      authDomain: ''
     };
+    if (!config.apiKey || !config.authDomain)
+    {
+      console.error('Need to add your Api key and authDomain (from Firebase project settings)');
+      return;
+    }
 
     firebase.initializeApp(config);
 
