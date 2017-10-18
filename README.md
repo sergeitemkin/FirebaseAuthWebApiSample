@@ -5,12 +5,13 @@ There are two projects rolled into the solution here. One is a SPA client that c
 Mostly generated via the angular-cli. The actual firebase authentication sample is in `src/app/app.component.ts`. The sample Api call would normally happen via an Angular Service, but I was lazy so it's kinda bundled into the component. This part is pretty straight forward:
 
 1) Create your Firebase config (you really only need the `authDomain` setting and your api key for this)
-
+```
     var config = {
       apiKey: "AIzaSyD1JWKae5SRLMbVwWdRz2YXu6z-jMzWNJU",
       authDomain: "testing-6bf89.firebaseapp.com"
     };
-    
+```
+
 2) If you're allowing 3rd party authentication providers, call `firebase.auth().getRedirectResult()` first to check if this is a returning redirect response from said providers. If there's still no user, then you can redirect to the provider, or display an authentication form, etc.
 
 3) Once you get a user, use the `Dd` property on the object to get the Id Token. This is a token containing various claims for the user, including the user's Firebase uid. Pop the Id Token into http://jwt.io to see the claims if you're curious.
